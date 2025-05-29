@@ -5,5 +5,5 @@ Projeto de sistema para usuários visualizarem seus paínes BI, com segurança e
 Tecnologias usadas: HTML, CSS, JavaScript, API.
 
 <div>  
-  <img height="75cm" src="Logo.png"/>
+  <img height="75cm" src="logo.png"/>
 </div>
