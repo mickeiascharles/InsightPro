@@ -52,7 +52,7 @@ body {
 .first-content,
 .second-content {
   width: 100%;
-  height: 65%;
+  height: 65%; /* Ajustado de 100% para 65% como no original. Verifique se é o desejado. */
   display: flex;
   position: absolute;
 }
@@ -65,7 +65,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url("/FrontEnd/IMG/image-container.jpg");
+  /* CAMINHO DA IMAGEM CORRIGIDO */
+  background-image: url("../IMG/image-container.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -75,8 +76,6 @@ body {
 .first-column::after {
   content: "";
   position: absolute;
-  /* top: 0;
-  left: 0; */
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -102,8 +101,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow-y: auto;
-  /* padding: 0px; */
   background-color: #fff;
+  padding: 20px; /* Adicionado padding para consistência com recuperar.css */
 }
 .second-content .second-column {
   order: 1;
@@ -141,8 +140,8 @@ body {
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
   padding: 10px 8px;
 
-  -webkit-text-stroke-width: 1px; /* Largura do contorno */
-  -webkit-text-stroke-color: #000000; /* Cor do contorno */
+  -webkit-text-stroke-width: 1px; 
+  -webkit-text-stroke-color: #000000; 
   paint-order: stroke fill;
 }
 
@@ -260,11 +259,12 @@ input:-webkit-autofill {
   transform: scale(1.2);
 }
 
-.password {
+.password { /* Para "Esqueceu senha?" */
   color: #34495e;
   font-size: 14px;
   margin: 10px 0;
   text-align: right;
+  text-decoration: none; /* Adicionado */
 }
 .password:hover {
   color: #4875a1;
@@ -283,12 +283,10 @@ input:-webkit-autofill {
   object-fit: contain;
 }
 
-/* QUANDO A LOGO ZZZ TA A ESQUERDA */
 .first-content .image-zzz {
   bottom: 10px;
   left: 10px;
 }
-/* QUANDO A LOGO ZZZ TA A DIREITA */
 .second-content .image-zzz {
   bottom: 10px;
   right: 10px;
@@ -300,8 +298,7 @@ input:-webkit-autofill {
   z-index: 13;
   pointer-events: auto;
 }
-.first-content .second-column {
-  /* Form Cadastro */
+.first-content .second-column { /* Form Cadastro */
   opacity: 1;
   transform: translateX(0);
   z-index: 11;
@@ -317,11 +314,14 @@ input:-webkit-autofill {
   z-index: -1;
   pointer-events: none;
 }
-.second-content .second-column {
+.second-content .second-column { /* Form Login */
   opacity: 0;
   transform: translateX(100%);
   z-index: -1;
   pointer-events: none;
+}
+.second-content .image-zzz {
+  opacity: 0;
 }
 
 .form-control-extra {
@@ -329,6 +329,7 @@ input:-webkit-autofill {
   align-items: center;
   width: 100%;
   justify-content: center;
+  margin-top: 10px; /* Adicionado para espaçamento */
 }
 
 .form-control-extra input[type="checkbox"] {
@@ -355,217 +356,87 @@ input:-webkit-autofill {
 .ip-info .fas {
   color: #777;
   font-size: 16px;
+  margin-right: 5px; /* Adicionado para espaçamento */
 }
 
 .ip-info span {
   font-size: 14px;
   color: #777;
 }
-.second-content .image-zzz {
-  opacity: 0;
-}
 
 /* --- KEYFRAMES DAS ANIMAÇÕES --- */
-/* Animação do painel deslizante */
-@keyframes slidein {
-  /* vai da esquerda para a direita */
-  from {
-    left: 0%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-  to {
-    left: 60%;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
+@keyframes slidein { /* Direita para Esquerda (Ativa Login) */
+  from { left: 0%; border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;}
+  to { left: 60%; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 15px; border-bottom-right-radius: 15px;}
 }
-@keyframes slideout {
-  /* vai da direita para a esquerda */
-  from {
-    left: 60%;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  to {
-    left: 0%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
+@keyframes slideout { /* Esquerda para Direita (Ativa Cadastro) */
+  from { left: 60%; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 15px; border-bottom-right-radius: 15px;}
+  to { left: 0%; border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;}
 }
 
-/* Animação de SAÍDA do painel decorativo do Cadastro */
-@keyframes desleft {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  25% {
-    transform: translateX(25%);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateX(50%);
-    opacity: 0.4;
-  }
-  75% {
-    transform: translateX(75%);
-    opacity: 0.1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
-  }
+@keyframes desleft { /* Painel decorativo do Cadastro saindo para esquerda */
+  from { transform: translateX(0); opacity: 1; }
+  25% { transform: translateX(25%); opacity: 0.8; }
+  50% { transform: translateX(50%); opacity: 0.4; }
+  75% { transform: translateX(75%); opacity: 0.1; }
+  to { transform: translateX(100%); opacity: 0; z-index: -1; pointer-events: none; }
 }
 
-/* Animação de SAÍDA do formulário de Login */
-@keyframes desright-exit {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
-  }
+@keyframes desright-exit { /* Formulário de Login saindo para direita */
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; z-index: -1; pointer-events: none; }
 }
 
-/* Animações de ENTRADA/SAÍDA para formulários e painéis decorativos */
-@keyframes exit-form-to-left {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-100%);
-    z-index: -1;
-    pointer-events: none;
-  }
+@keyframes exit-form-to-left { /* Formulário de Cadastro saindo para esquerda */
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-100%); z-index: -1; pointer-events: none;}
 }
-@keyframes enter-form-from-left {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-    z-index: -1;
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
+@keyframes enter-form-from-left { /* Formulário de Cadastro entrando da esquerda */
+  from { opacity: 0; transform: translateX(-100%); z-index: -1;}
+  to { opacity: 1; transform: translateX(0); pointer-events: auto;}
 }
-@keyframes enter-form-from-right {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-    z-index: -1;
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
+@keyframes enter-form-from-right { /* Formulário de Login entrando da direita */
+  from { opacity: 0; transform: translateX(100%); z-index: -1;}
+  to { opacity: 1; transform: translateX(0); pointer-events: auto;}
 }
-@keyframes exit-deco-to-left {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-100%);
-    z-index: -1;
-    pointer-events: none;
-  }
+@keyframes exit-deco-to-left { /* Painel decorativo do Login saindo para esquerda */
+  from { opacity: 1; transform: translateX(0);}
+  to { opacity: 0; transform: translateX(-100%); z-index: -1; pointer-events: none;}
 }
-@keyframes enter-deco-from-right {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-    z-index: -1;
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
+@keyframes enter-deco-from-right { /* Painel decorativo do Login entrando da direita */
+  from { opacity: 0; transform: translateX(100%); z-index: -1;}
+  to { opacity: 1; transform: translateX(0); pointer-events: auto;}
 }
 
 /* --- APLICAÇÃO DAS ANIMAÇÕES COM CLASSES JS --- */
-.sign-in-js .content::before {
-  animation: slidein 1.2s forwards;
-}
-.sign-up-js .content::before {
-  animation: slideout 1.2s forwards;
-}
+/* .sign-in-js = Tela de Login ATIVA */
+/* .sign-up-js = Tela de Cadastro ATIVA (estado inicial) */
+
+.sign-in-js .content::before { animation: slidein 1.2s forwards; }
+.sign-up-js .content::before { animation: slideout 1.2s forwards; }
 
 /* Tela de Login Ativa (.sign-in-js) */
-.sign-in-js .first-content .first-column {
-  animation: desleft 1.2s forwards;
-}
-.sign-in-js .first-content .second-column {
-  animation: exit-form-to-left 1.2s forwards;
-  z-index: 11;
-}
-.sign-in-js .first-content .image-zzz {
-  opacity: 0;
-  transition-delay: 0s;
-}
+.sign-in-js .first-content .first-column { animation: desleft 1.2s forwards; } /* Deco Cadastro sai */
+.sign-in-js .first-content .second-column { animation: exit-form-to-left 1.2s forwards; z-index: 11; } /* Form Cadastro sai */
+.sign-in-js .first-content .image-zzz { opacity: 0; transition-delay: 0s; }
 
-.sign-in-js .second-content .first-column {
-  animation: enter-deco-from-right 1.2s forwards;
-  z-index: 13;
-}
-.sign-in-js .second-content .second-column {
-  animation: enter-form-from-right 1.2s forwards;
-  z-index: 11;
-}
-.sign-in-js .second-content .image-zzz {
-  opacity: 1;
-  transition-delay: 0.3s;
-}
+.sign-in-js .second-content .first-column { animation: enter-deco-from-right 1.2s forwards; z-index: 13; } /* Deco Login entra */
+.sign-in-js .second-content .second-column { animation: enter-form-from-right 1.2s forwards; z-index: 11; } /* Form Login entra */
+.sign-in-js .second-content .image-zzz { opacity: 1; transition-delay: 0.3s; }
 
 /* Tela de Cadastro Ativa (.sign-up-js) */
-.sign-up-js .first-content .first-column {
-  transform: translateX(0);
-  opacity: 1;
-  z-index: 13;
-  pointer-events: auto;
-  animation: none;
+.sign-up-js .first-content .first-column { /* Deco Cadastro Visível */
+  transform: translateX(0); opacity: 1; z-index: 13; pointer-events: auto; animation: none; 
 }
-.sign-up-js .first-content .second-column {
-  animation: enter-form-from-left 1.2s forwards;
-  z-index: 11;
+.sign-up-js .first-content .second-column { /* Form Cadastro Visível */
+  animation: enter-form-from-left 1.2s forwards; z-index: 11; 
 }
-.sign-up-js .first-content .image-zzz {
-  opacity: 1;
-  transition-delay: 0.3s;
-}
+.sign-up-js .first-content .image-zzz { opacity: 1; transition-delay: 0.3s; }
 
-.sign-up-js .second-content .first-column {
-  animation: exit-deco-to-left 1.2s forwards;
-  z-index: 13;
-}
-.sign-up-js .second-content .second-column {
-  animation: desright-exit 1.2s forwards;
-}
-.sign-up-js .second-content .image-zzz {
-  opacity: 0;
-  transition-delay: 0s;
-}
+.sign-up-js .second-content .first-column { animation: exit-deco-to-left 1.2s forwards; z-index: 13; } /* Deco Login Sai */
+.sign-up-js .second-content .second-column { animation: desright-exit 1.2s forwards; } /* Form Login Sai */
+.sign-up-js .second-content .image-zzz { opacity: 0; transition-delay: 0s; }
+
 
 /* --- RESPONSIVO --- */
 @media (max-width: 1040px) {
@@ -577,7 +448,7 @@ input:-webkit-autofill {
     flex-direction: column;
   }
 
-  .content::before {
+  .content::before { /* Esconde painel deslizante no mobile */
     display: none;
   }
 
@@ -588,76 +459,64 @@ input:-webkit-autofill {
     width: 100%;
     height: 100%;
     transition: opacity 0.5s ease-in-out, z-index 0s 0.25s;
-    transform: none !important;
+    transform: none !important; /* Reseta transformações de animação */
   }
 
-  /* Estado inicial mobile */
-  body:not(.sign-in-js) .first-content {
-    opacity: 1;
-    z-index: 10;
-    pointer-events: auto;
+  /* Estado inicial mobile: Cadastro visível (.sign-up-js é o padrão do body ou não tem classe de troca ainda) */
+  body:not(.sign-in-js) .first-content { /* Cadastro Visível */
+    opacity: 1; z-index: 10; pointer-events: auto;
   }
-  body:not(.sign-in-js) .second-content {
-    opacity: 0;
-    z-index: 5;
-    pointer-events: none;
+  body:not(.sign-in-js) .second-content { /* Login Oculto */
+    opacity: 0; z-index: 5; pointer-events: none;
   }
 
   .first-column,
   .second-column {
-    width: 100% !important;
+    width: 100% !important; /* Ocupa toda a largura */
     height: auto;
-    order: 0 !important;
+    order: 0 !important; /* Reseta a ordem para empilhamento natural */
     border-radius: 0 !important;
-    .first-column::after {
+  }
+  .first-column::after { /* Overlay da imagem */
       border-radius: 0 !important;
-    }
+  }
 
-    .first-column {
+  .first-column { /* Coluna decorativa */
       min-height: 200px;
-      height: 40vh;
-    }
-    .second-column {
+      height: 40vh; /* Altura da coluna decorativa no mobile */
+  }
+  .second-column { /* Coluna do formulário */
       min-height: 300px;
-      height: 60vh;
-      justify-content: flex-start;
+      height: 60vh; /* Altura da coluna do formulário no mobile */
+      justify-content: flex-start; /* Alinha conteúdo ao topo */
       padding-top: 20px;
-    }
+  }
 
-    .form {
-      width: 90%;
-    }
+  .form {
+    width: 90%; /* Formulário mais largo no mobile */
+  }
 
-    .image-zzz {
-      position: relative;
-      margin: 15px auto;
-      bottom: auto;
-      left: auto;
-      right: auto;
-      opacity: 1 !important;
-    }
+  .image-zzz { /* Logo ZZZ no mobile */
+    position: relative; /* Tira do posicionamento absoluto */
+    margin: 15px auto;
+    bottom: auto; left: auto; right: auto;
+    opacity: 1 !important; /* Garante visibilidade */
+  }
 
-    /* Troca de telas no mobile */
-    .sign-in-js .first-content {
-      opacity: 0;
-      z-index: 5;
-      pointer-events: none;
-    }
-    .sign-in-js .second-content {
-      opacity: 1;
-      z-index: 10;
-      pointer-events: auto;
-    }
+  /* Troca de telas no mobile */
+  /* Quando Login está ativo */
+  .sign-in-js .first-content { /* Cadastro Oculto */
+    opacity: 0; z-index: 5; pointer-events: none;
+  }
+  .sign-in-js .second-content { /* Login Visível */
+    opacity: 1; z-index: 10; pointer-events: auto;
+  }
 
-    .sign-up-js .first-content {
-      opacity: 1;
-      z-index: 10;
-      pointer-events: auto;
-    }
-    .sign-up-js .second-content {
-      opacity: 0;
-      z-index: 5;
-      pointer-events: none;
-    }
+  /* Quando Cadastro está ativo (redundante com estado inicial, mas explícito) */
+  .sign-up-js .first-content { /* Cadastro Visível */
+    opacity: 1; z-index: 10; pointer-events: auto;
+  }
+  .sign-up-js .second-content { /* Login Oculto */
+    opacity: 0; z-index: 5; pointer-events: none;
   }
 }
