@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InsightPro - Acesso</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="sign-in-js">
+    <div class="container">
+      <div class="content first-content">
+        <div class="first-column">
+          <h2 class="title title-primary">Seja Bem-vindo!</h2>
+          <p class="description description-primary">Já tem cadastro?</p>
+          <p class="description description-primary">Faça login aqui</p>
+          <button id="signin" class="btn btn-primary">Entrar</button>
+        </div>
+
+        <div class="image-zzz">
+          <img src="IMG/logozzz.png" alt="Logo ZZZ decorativa" />
+        </div>
+
+        <div class="second-column">
+          <div class="logo-container">
+            <img class="logo" src="IMG/logo.png" alt="InsightPro Logo" />
+          </div>
+          <h2 class="title title-second">Cadastre-se</h2>
+
+          <div class="social-media">
+            <ul class="list-social-media">
+              <a
+                class="link-social-media"
+                href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=service%3A%3Aaccount.microsoft.com%3A%3AMBI_SSL+openid+profile+offline_access&response_type=code&client_id=81feaced-5ddd-41e7-8bef-3e20a2689bb7&redirect_uri=https%3A%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin-oauth&client-request-id=797bcc2d-6b67-4467-b301-6c369831ca8d&x-client-SKU=MSAL.Desktop&x-client-Ver=4.66.1.0&x-client-OS=Windows+Server+2019+Datacenter&prompt=login&client_info=1&state=H4sIAAAAAAAEAAXByYJDMAAA0H_p1UEUmTrWUlsssY26jVpjl1bx9fPeJc31yfvW9hb4WzEy1hbuo44GQWu7EpNNk1dtA2lGVFaEIFnXqJ_rZMquJ6YJjHDtqZxVzLEgO3gSu2lfZa51pptmZiTirYIo3eGyZWh7c1AvMSeZsYuVFC5ApdSsXBBpNIIs2H8DnNCsBAvb5qdxYOSfox5jV9qRgI9AF_3XEzFfM-qHe6oM7aAwBlT7ownk5X1wox5O5tAQ5jCQNg1NKB89H3swbLf4wcf66tLTeDt0fv6hK6sAt7Oh493EhjgwhbmqRDa2fvjgg9gPau6NVGFa5N23IP7jBJXu-PcslQx3Jq9PISR9Y77luZK9-fIP28p1aEIBAAA&msaoauth2=true&instance_aware=true&lc=1046&sso_reload=true"
+              >
+                <li class="item-social-media">
+                  <i class="fab fa-microsoft"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <p class="description description-second">
+            Ou use seu email para se registrar
+          </p>
+
+          <form class="form" id="registerForm">
+            <label class="label-input" for="register-email">
+              <i class="fa-regular fa-envelope icon-modify"></i>
+              <input
+                type="email"
+                id="register-email"
+                placeholder="E-mail"
+                required
+              />
+            </label>
+
+            <label class="label-input" for="register-password">
+              <i class="fa-solid fa-lock icon-modify"></i>
+              <input
+                type="password"
+                id="register-password"
+                placeholder="Senha"
+                required
+              />
+            </label>
+
+            <label class="label-input" for="register-confirm-password">
+              <i class="fa-solid fa-lock icon-modify"></i>
+              <input
+                type="password"
+                id="register-confirm-password"
+                placeholder="Confirmar senha"
+                required
+              />
+            </label>
+            <button
+              id="registerConfirmButton"
+              type="button"
+              class="btn btn-second"
+            >
+              Confirmar
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="content second-content">
+        <div class="first-column">
+          <h2 class="title title-primary">Olá, amigo!</h2>
+          <p class="description description-primary">Ainda não tem cadastro?</p>
+          <p class="description description-primary">Faça seu cadastro aqui</p>
+          <button id="signup" class="btn btn-primary">Cadastre-se</button>
+        </div>
+
+        <div class="second-column">
+          <div class="logo-container">
+            <img class="logo" src="IMG/logo.png" alt="InsightPro Logo" />
+          </div>
+          <h2 class="title title-second">Entrar no InsightPro</h2>
+          <p class="description">Bem-vindo de volta!</p>
+          <div class="social-media">
+            <ul class="list-social-media">
+              <a
+                class="link-social-media"
+                href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=service%3A%3Aaccount.microsoft.com%3A%3AMBI_SSL+openid+profile+offline_access&response_type=code&client_id=81feaced-5ddd-41e7-8bef-3e20a2689bb7&redirect_uri=https%3A%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin-oauth&client-request-id=797bcc2d-6b67-4467-b301-6c369831ca8d&x-client-SKU=MSAL.Desktop&x-client-Ver=4.66.1.0&x-client-OS=Windows+Server+2019+Datacenter&prompt=login&client_info=1&state=H4sIAAAAAAAEAAXByYJDMAAA0H_p1UEUmTrWUlsssY26jVpjl1bx9fPeJc31yfvW9hb4WzEy1hbuo44GQWu7EpNNk1dtA2lGVFaEIFnXqJ_rZMquJ6YJjHDtqZxVzLEgO3gSu2lfZa51pptmZiTirYIo3eGyZWh7c1AvMSeZsYuVFC5ApdSsXBBpNIIs2H8DnNCsBAvb5qdxYOSfox5jV9qRgI9AF_3XEzFfM-qHe6oM7aAwBlT7ownk5X1wox5O5tAQ5jCQNg1NKB89H3swbLf4wcf66tLTeDt0fv6hK6sAt7Oh493EhjgwhbmqRDa2fvjgg9gPau6NVGFa5N23IP7jBJXu-PcslQx3Jq9PISR9Y77luZK9-fIP28p1aEIBAAA&msaoauth2=true&instance_aware=true&lc=1046&sso_reload=true"
+              >
+                <li class="item-social-media">
+                  <i class="fab fa-microsoft"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <p class="description description-second">
+            Ou acesse com seu e-mail:
+          </p>
+          <form class="form" id="loginForm">
+            <label class="label-input" for="login-email">
+              <i class="fa-regular fa-envelope icon-modify"></i>
+              <input
+                type="email"
+                id="login-email"
+                placeholder="E-mail"
+                required
+              />
+            </label>
+
+            <label class="label-input" for="login-password">
+              <i class="fa-solid fa-lock icon-modify"></i>
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Senha"
+                required
+              />
+            </label>
+            <a class="password" href="View/recuperar.html"
+              >Esqueceu sua senha?</a
+            >
+            <button id="loginButton" type="button" class="btn btn-second">
+              Entrar
+            </button>
+
+            <div class="form-control-extra">
+              <input type="checkbox" id="salvarLogin" name="salvarLogin" />
+              <label for="salvarLogin">Salvar dados no próximo login</label>
+            </div>
+
+            <div class="ip-info">
+              <i class="fas fa-location-dot"></i>
+              <span
+                >Seu endereço IP será registrado para fins de segurança.</span
+              >
+            </div>
+          </form>
+        </div>
+        <div class="image-zzz">
+          <img src="IMG/logozzz.png" alt="Logo ZZZ decorativa" />
+        </div>
+      </div>
+    </div>
+    <script src="JS/app.js"></script>
+  </body>
+</html>
