@@ -24,3 +24,9 @@ Equipe de desenvolvimento:
   <img height="50cm" src="https://brandlogos.net/wp-content/uploads/2016/06/linkedin-logo.png"/>
   Tallys Araújo
 </div>
+<br><br>
+<div>
+  Manual de como ligar o servidor node.js passo a passo:
+</div>
+
+https://youtu.be/4CmpCHzXad8?si=REJlWI-mGRY9v5rp 
